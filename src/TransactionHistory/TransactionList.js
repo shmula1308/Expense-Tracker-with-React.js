@@ -6,6 +6,7 @@ const TransactionList = (props) => {
   return (
     <ul className="transaction-list">
       <TransactionItem />
+      <TransactionItem />
     </ul>
   );
 };

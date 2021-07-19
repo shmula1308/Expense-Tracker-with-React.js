@@ -1,5 +1,6 @@
 import React from "react";
 import "./TransactionForm.css";
+import Card from "../UI/Card";
 
 const TransactionForm = (props) => {
   return (
@@ -23,9 +24,11 @@ const TransactionForm = (props) => {
             placeholder="Enter amount..."
           />
         </div>
-        <button type="submit" className="btn">
-          Add transaction
-        </button>
+        <Card>
+          <button type="submit" className="form-btn">
+            Add transaction
+          </button>
+        </Card>
       </div>
     </form>
   );
