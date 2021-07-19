@@ -1,0 +1,38 @@
+.account {
+  display: flex;
+  background-color: #ffffff;
+  padding: 1.5em;
+  margin-top: 1.5em;
+}
+
+.account-label {
+  text-transform: uppercase;
+  font-weight: 600;
+  /* margin-bottom: 0.5em; */
+}
+
+.account-money {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.account-money--income {
+  color: #2ecc71;
+}
+
+.account-money--expense {
+  color: #c03935;
+}
+
+.account-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3em;
+  flex-direction: column;
+  width: 50%;
+}
+
+.account-column:first-child {
+  border-right: 1px solid #dedede;
+}
