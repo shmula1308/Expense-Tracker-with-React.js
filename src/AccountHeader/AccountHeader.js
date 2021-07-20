@@ -6,8 +6,8 @@ import "./AccountHeader.css";
 const AccountHeader = (props) => {
   return (
     <div className="account-header">
-      <CurrentBalance />
-      <Account />
+      <CurrentBalance items={props.items} />
+      <Account items={props.items} />
     </div>
   );
 };

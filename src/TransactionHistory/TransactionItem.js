@@ -3,13 +3,26 @@ import Card from "../UI/Card";
 import "./TransactionItem.css";
 
 const TransactionItem = (props) => {
-  //Receive type of transaction from props to style the item dynamically
+  const deleteItemHandler = () => {
+    props.onDelete(props.id);
+  };
+
+  let transactionType = "transaction-item--expense";
+
+  if (Number(props.amount) > 0) {
+    transactionType = "transaction-item--income";
+  }
+
+  const classes = "transaction-item " + transactionType;
 
   return (
     <Card>
-      <li className="transaction-item transaction-item--expense">
-        <span className="transaction-title">Bread</span>
-        <span className="transaction-amount">$10</span>
+      <li className={classes} id={props.id}>
+        <span className="transaction-delete" onClick={deleteItemHandler}>
+          X
+        </span>
+        <span className="transaction-title">{props.title}</span>
+        <span className="transaction-amount">{"$" + props.amount}</span>
       </li>
     </Card>
   );

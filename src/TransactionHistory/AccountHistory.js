@@ -6,7 +6,10 @@ const AccountHistory = (props) => {
   return (
     <div className="account-history">
       <h2 className="account-history__title">History</h2>
-      <TransactionList />
+      <TransactionList
+        items={props.items}
+        onDeleteItem={props.onDeleteTransaction}
+      />
     </div>
   );
 };

@@ -6,8 +6,7 @@
   margin-bottom: 0.7em;
 }
 
-.transaction-item::before {
-  content: "X";
+.transaction-delete {
   display: block;
   font-weight: 500;
   background-color: #e74c3c;
@@ -25,7 +24,7 @@
   font-weight: 500;
 }
 
-.transaction-item:hover::before {
+.transaction-item:hover .transaction-delete {
   opacity: 1;
 }
 

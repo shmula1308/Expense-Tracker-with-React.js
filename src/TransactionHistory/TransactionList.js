@@ -5,8 +5,17 @@ import "./TransactionList.css";
 const TransactionList = (props) => {
   return (
     <ul className="transaction-list">
-      <TransactionItem />
-      <TransactionItem />
+      {props.items.map((item) => {
+        return (
+          <TransactionItem
+            key={item.id}
+            title={item.title}
+            amount={item.amount}
+            id={item.id}
+            onDelete={props.onDeleteItem}
+          />
+        );
+      })}
     </ul>
   );
 };
