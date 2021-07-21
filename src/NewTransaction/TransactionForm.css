@@ -2,6 +2,14 @@
   margin-bottom: 1em;
 }
 
+.form-control.invalid input {
+  background-color: salmon;
+}
+
+.form-control {
+  margin-bottom: 1em;
+}
+
 .form-control__label {
   display: inline-block;
   margin-bottom: 0.5em;

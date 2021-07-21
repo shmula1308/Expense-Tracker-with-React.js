@@ -10,7 +10,7 @@ const CurrentBalance = (props) => {
   return (
     <div className="balance">
       <span className="balance-label">your balance</span>
-      <p className="balance-money">{"$" + currentBalance}</p>
+      <p className="balance-money">{"$" + currentBalance.toFixed(2)}</p>
     </div>
   );
 };

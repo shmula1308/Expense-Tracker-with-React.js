@@ -20,13 +20,13 @@ const Account = (props) => {
       <div className="account-column">
         <div className="account-label">income</div>
         <div className="account-money--income account-money">
-          {"$" + income}
+          {"$" + income.toFixed(2)}
         </div>
       </div>
       <div className="account-column">
         <div className="account-label">expense</div>
         <div className="account-money--expense account-money">
-          {"$" + expense}
+          {"$" + Math.abs(expense).toFixed(0)}
         </div>
       </div>
     </Card>

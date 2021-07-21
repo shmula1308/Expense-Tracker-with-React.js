@@ -5,8 +5,13 @@ import Card from "../UI/Card";
 const TransactionForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
+  const [isValid, setIsValid] = useState(true);
 
   const onSubmitHandler = (ev) => {
+    if (enteredTitle.trim().length > 0) {
+      setIsValid(true);
+    }
+
     ev.preventDefault();
 
     const enteredTransaction = {
@@ -14,6 +19,11 @@ const TransactionForm = (props) => {
       amount: enteredAmount,
       id: Date.now().toString(),
     };
+
+    if (enteredTitle.trim().length === 0) {
+      setIsValid(false);
+      return;
+    }
 
     props.onEnteredTransaction(enteredTransaction);
     setEnteredTitle("");
@@ -31,7 +41,7 @@ const TransactionForm = (props) => {
   return (
     <form onSubmit={onSubmitHandler}>
       <div className="form-controls">
-        <div className="form-control">
+        <div className={`form-control ${!isValid ? "invalid" : ""}`}>
           <label className="form-control__label">Text</label>
           <input
             value={enteredTitle}

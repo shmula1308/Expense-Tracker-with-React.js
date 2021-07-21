@@ -22,7 +22,7 @@ const TransactionItem = (props) => {
           X
         </span>
         <span className="transaction-title">{props.title}</span>
-        <span className="transaction-amount">{"$" + props.amount}</span>
+        <span className="transaction-amount">{props.amount}</span>
       </li>
     </Card>
   );
