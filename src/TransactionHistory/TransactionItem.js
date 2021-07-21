@@ -3,6 +3,7 @@ import Card from "../UI/Card";
 import "./TransactionItem.css";
 
 const TransactionItem = (props) => {
+  
   const deleteItemHandler = () => {
     props.onDelete(props.id);
   };

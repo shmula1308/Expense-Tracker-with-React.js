@@ -3,6 +3,7 @@ import "./CurrentBalance.css";
 
 const CurrentBalance = (props) => {
   let currentBalance = 0;
+
   if (props.items.length > 0) {
     currentBalance = props.items.reduce((a, b) => a + Number(b.amount), 0);
   }

@@ -10,6 +10,10 @@ const App = () => {
 
   const [transactions, setTransactions] = useState(transactionsArray);
 
+  const setStorage = (transactions) => {
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+  };
+
   const newTransactionHandler = (newTransaction) => {
     setTransactions((prevTransactions) => {
       const transactions = [...prevTransactions];
@@ -20,14 +24,10 @@ const App = () => {
     });
   };
 
-  const setStorage = (transactions) => {
-    localStorage.setItem("transactions", JSON.stringify(transactions));
-  };
-
-  const deleteTransactionHandler = (deletedTransaction) => {
+  const deleteTransactionHandler = (deletedId) => {
     setTransactions((prevTransactions) => {
       const filteredTransactions = prevTransactions.filter(
-        (transaction) => transaction.id !== deletedTransaction
+        (transaction) => transaction.id !== deletedId
       );
 
       setStorage(filteredTransactions);

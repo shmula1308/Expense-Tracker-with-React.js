@@ -8,11 +8,14 @@ const TransactionForm = (props) => {
   const [isValid, setIsValid] = useState(true);
 
   const onSubmitHandler = (ev) => {
+    ev.preventDefault();
+
     if (enteredTitle.trim().length > 0) {
       setIsValid(true);
+    } else {
+      setIsValid(false);
+      return;
     }
-
-    ev.preventDefault();
 
     const enteredTransaction = {
       title: enteredTitle,
@@ -20,10 +23,10 @@ const TransactionForm = (props) => {
       id: Date.now().toString(),
     };
 
-    if (enteredTitle.trim().length === 0) {
-      setIsValid(false);
-      return;
-    }
+    // if (enteredTitle.trim().length === 0) {
+    //   setIsValid(false);
+    //   return;
+    // }
 
     props.onEnteredTransaction(enteredTransaction);
     setEnteredTitle("");
